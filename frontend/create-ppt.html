@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Create PowerPoint Slides</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">AI Document Authoring</div>
+      <nav class="nav">
+        <a href="home.html">Dashboard</a>
+        <a href="saved.html">My Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Create PowerPoint Slides</h1>
+      <div class="sub">Provide a topic and get a suggested set of slide titles. Populate and refine each slide, then save or export.</div>
+    </section>
+
+    <section class="info">
+      <label>Presentation topic</label>
+      <input id="pptPrompt" placeholder="e.g. Product launch strategy Q2" />
+      <div style="margin-top:8px">
+        <label>Number of slides</label>
+        <input id="numSlides" type="number" min="1" max="30" value="6" style="width:80px;margin-left:8px" />
+        <button id="btnSuggestSlides" style="margin-left:12px">AI-Suggest Slides</button>
+        <button id="btnCreateDefault" style="margin-left:8px">Create with default Slides</button>
+      </div>
+    </section>
+
+    <section class="info" style="margin-top:16px">
+      <h2>Slides</h2>
+      <div id="slidesContainer"></div>
+      <div style="margin-top:12px;display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap">
+        <button id="btnSavePpt">Save Project</button>
+        <button id="btnExportPpt" style="margin-left:8px">Export .ppt (demo)</button>
+        <button id="btnViewSlides" class="btn secondary" style="margin-left:8px">View as Slides</button>
+      </div>
+
+      <div id="slideView" style="display:none;margin-top:18px;max-width:980px;margin-left:auto;margin-right:auto;">
+        <!-- slide previews rendered here -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><small>Demo export produces a .ppt (plain text) file for convenience.</small></footer>
+
+  <script src="auth.js"></script>
+  <script src="create-ppt.js"></script>
+</body>
+</html>

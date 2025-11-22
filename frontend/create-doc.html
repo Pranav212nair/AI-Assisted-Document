@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Create Word Document</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">AI Document Authoring</div>
+      <nav class="nav">
+        <a href="home.html">Dashboard</a>
+        <a href="saved.html">My Projects</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Create Word Document</h1>
+      <div class="sub">Enter a main topic and let AI suggest a structured outline. Expand each section and refine with quick actions.</div>
+    </section>
+
+    <section class="info">
+      <label>Main topic / prompt</label>
+      <input id="mainPrompt" placeholder="e.g. A market analysis of the EV industry in 2025" />
+      <div style="margin-top:8px">
+        <button id="btnSuggest">AI-Suggest Outline</button>
+        <button id="btnCreate" style="margin-left:8px">Create with Default Outline</button>
+      </div>
+    </section>
+
+    <section class="info" style="margin-top:16px">
+      <h2>Outline</h2>
+      <div id="outline"></div>
+      <div style="margin-top:12px;display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap">
+        <button id="btnSave">Save Project</button>
+        <button id="btnExport" style="margin-left:8px">Export .doc</button>
+        <button id="btnViewWord" class="btn secondary" style="margin-left:8px">View as Word</button>
+      </div>
+
+      <div id="docView" class="doc-page" style="display:none;margin-top:18px;max-width:820px;margin-left:auto;margin-right:auto;padding:28px;background:#fff;border-radius:6px;box-shadow:0 16px 40px rgba(8,24,64,0.12);">
+        <!-- populated by create-doc.js -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><small>Demo export produces a .doc (plain text) file for convenience.</small></footer>
+
+  <script src="auth.js"></script>
+  <script src="create-doc.js"></script>
+</body>
+</html>

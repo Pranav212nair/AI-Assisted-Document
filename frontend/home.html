@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Dashboard — AI Document Authoring</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">AI Document Authoring</div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#process">Process</a>
+        <!-- Hide on index; shown when logged in -->
+        <span class="nav-username" style="margin-right:8px;font-weight:600"></span>
+        <button class="btn logout nav-logout" id="btnLogout" style="display:none">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Welcome, <span id="welcomeName" style="font-weight:800"></span> 👋</h1>
+      <div class="sub">Continue your projects or create a new document in seconds.</div>
+
+      <div class="actions" style="margin-top:32px">
+        <div class="card action-btn" data-target="create-doc.html">
+          <h3>Create Word Document</h3>
+          <p>Generate .docx files</p>
+        </div>
+
+        <div class="card action-btn" data-target="create-ppt.html">
+          <h3>Create PowerPoint Slides</h3>
+          <p>Create auto AI slides</p>
+        </div>
+
+        <div class="card action-btn" data-target="saved.html">
+          <h3>My Projects</h3>
+          <p>View all saved projects</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-section" id="video">
+      <h2>About this project</h2>
+      <div class="video-wrap">
+        <!-- GIF for the project video (place `yt.gif` in the frontend folder). If missing, fallback to an inline SVG preview. -->
+        <img src="yt.gif" alt="Project video preview" class="yt-gif" onerror="this.outerHTML='<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 1280 720\' class=\'yt-gif\'><rect width=\'100%\' height=\'100%\' fill=\'#0b1220\'/><circle cx=\'640\' cy=\'360\' r=\'110\' fill=\'#ffffff22\'/><polygon points=\'600,320 600,400 700,360\' fill=\'#ffffff\'/><text x=\'50%\' y=\'90%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'#eee\' font-family=\'Arial,Helvetica,sans-serif\' font-size=\'20\'>Project video preview</text></svg>'" />
+      </div>
+    </section>
+
+    <section id="about" class="info">
+      <h2>About</h2>
+      <p>This platform helps professionals create well-structured business documents quickly using AI. Users scaffold documents (outline/sections), generate content section-by-section, and iteratively refine the output.</p>
+      <p>The backend integrates with large language models to produce context-aware text and assemble final .docx/.pptx files. The UI focuses on author control — you can make each section more formal, shorter, or focused for a specific audience.</p>
+      <p>Saved projects include revision history so authors can revert and compare previous drafts. Exporting uses server-side document libraries (python-docx / python-pptx) to assemble user-approved content.</p>
+      <p>For security and production-readiness, swap the demo localStorage auth with a real backend (JWT or Firebase Auth), hashed passwords, and HTTPS.</p>
+    </section>
+
+    <section id="process" class="info">
+      <h2>Process</h2>
+      <ol>
+        <li>Create a project: choose Word or PPT and enter the main prompt.</li>
+        <li>AI generates an outline or slide titles and suggests content for each section.</li>
+        <li>Refine individual sections with targeted prompts (e.g., "Make more formal" or "Shorten to 50 words").</li>
+        <li>Save revisions, preview, and export the assembled document (.docx / .pptx).</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer class="footer"><small>© 2025 AI Document Authoring — Demo</small></footer>
+
+  <script src="auth.js"></script>
+</body>
+</html>
